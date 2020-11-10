@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C04Paragraph.html</title>
+</head>
+<body>
+    <h2>문단관련 CSS 속성들</h2>
+
+    <!-- 
+        수평방향에서의 정렬
+            블럭엘리먼트 : 컨텐츠의 양에 상관없이 하나의 블럭을 차지하므로
+                우측의 공간이 충분하여 컨첸츠는 우측정렬된다.
+            인라인렐리먼트 : 컨텐츠의 크기만큼만 영역을 차지하므로 컨첸트가
+                움직일 공간이 없어 정렬되지 않느다. 정렬해야 한다면
+                부모엘리먼트에서 text-align을 설정한다.
+     -->
+     <!-- span을 정렬하기 위해서 text-align:right; 필요함 -->
+    <div style="border:1px blue dotted; width: 400px;">
+        <h2>컨턴츠 수평방향 정렬</h2>
+        <div style="border: 1px solid red; text-align : right;">
+            블럭엘리먼트
+        </div>
+        <span style="border: 1px solid blue; text-align: right;">
+            인라인엘리먼트
+        </span>
+    </div>
+
+    <!-- 
+    line-height : 줄간격 즉 라인사지의 간격을 띄우는데
+        블럭과 인라인은 조금 다르게 적용된다
+        block : 컨텐츠의 영역 중 세로영역이 늘어나서 마치 줄간격이
+            생긴것 처럼 보여지게 된다.
+        inline : 컨텐츠의 영역은 크기의 변화가 없지만, 
+        지정된 사이즈 만큼 줄간격이 생겨 사이가 벌어진다.
+
+     -->
+    <h3>줄사이의 간격</h3>
+    <h4 style="line-height: 5em; border: 1px solid blue;">
+        블럭엘리먼트 1에 줄간격 적용
+    </h4>
+    <h4 style="border: 1px solid black;">블럭 엘리먼트2</h4>
+    <h4 style="border: 1px solid black;">블럭 엘리먼트3</h4>
+
+    <div class="inline">
+        <span style="line-height: 5em; border:1px solid black;">
+            인라인엘리먼트1
+        </span><br>
+        <span style="border: 1px solid black;">인라인엘리먼트2</span>
+        <br>
+        <span style="border: 1px solid black;">인라인엘리먼트3</span>
+    </div>
+
+    <h3>수직상태에서의 가운데 정렬</h3>
+    <!-- 
+        div박스와 height와 line-height의 값을 동일하게 지정하면
+        세로상태에서 가운데 정렬이 된다.
+     -->
+    <h4>블럭엘리먼트 사용시 방법1</h4>
+    <div style="border: 1px solid black; height: 200px; width: 200px; line-height: 200px;">
+        나는 텍스트 1
+    </div>
+
+    <!-- 
+        div박스 내부의 padding을 지정해서 텍스트를 아래로 밀어준다.
+        이경우 박스의 세로영역이 늘어나므로 사이즈는 별도로 조절해줘야 한다.
+     -->
+
+    <h4>블럭엘리먼트 사용시 방법2</h4>
+    <div style="border: 1px solid red; height: 100px; width: 200px; padding-top: 100px;">
+        나는 텍스트2
+    </div>
+
+    <!-- 
+        인라인 엘리먼트에서 세로상태의 가운데 정렬을 위해서는
+        vertical-align을 사용한다. 
+     -->
+    <h4>인라인엘리먼트 사용시</h4>
+    <table border="1" width="300">
+        <tr>
+            <td style="height: 100px; vertical-align: top;">인라인엘리먼트 세로정렬</td>
+        </tr>
+        <tr>
+            <td style="height: 100px; vertical-align: middle;">인라인엘리먼트 세로정렬</td>
+        </tr>
+        <tr>
+            <td style="height: 100px; vertical-align: bottom;">인라인엘리먼트 세로정렬</td>
+        </tr>
+    </table>
+
+    <h2>배분정렬</h2>
+    <p style="border: 1px solid blue; text-align:justify;">
+        [아시아경제 이지은 기자, 임춘한 기자] 주호영 국민의힘 원내대표가 추미애 법무부 장관에 대해 "광인 전략을 구사하는 것 같다"며 비판하고, 검찰청 예산을 법무부로부터 독립시키는 방안을 검토해야 한다고 강조했다.
+        <br>
+        야당이 고위공직자범죄수사처(공수처) 처장 후보자로 추천한 석동현 전 검사장이 공수처를 '괴물'로 표현해 논란이 된 데 대해서는 "(공수처에) 문제가 없다는 사람이 더 이상하다"고 꼬집었다. 댓글 조작으로 유죄선고를 받은 김경수 경남지사에게는 "지사직을 물러나야 한다"고 촉구했다.
+        <br>
+        주 원내대표는 10일 국회에서 열린 원내대책회의 직후 기자들과 만나 "추 장관이 검찰을 괴롭히기 위해서 할 수 있는 일은 모두 다해보는 것 같다"며 이같이 말했다.
+        <br>
+        그는 각 지검별 특활비를 법무부가 직접 나눠주겠다는 지시가 나온 데 대해서는 "외청 중에서 예산 독립을 하지 않고 있는 것이 검찰청 밖에 없는데, 검찰청의 예산을 법무부로부터 독립시킬지를 검토해봐야 한다"고 말했다.
+        <br>
+        이날 석 전 검사장이 페이스북을 통해 '공수처 반대' 의사를 표한 데 대해서는 "공수처에 문제가 없다고 생각하는 사람은 아무도 없다"며 "오히려 문제가 없다고 한 사람이 더 이상한 사람이다. 반대하는 사람을 넣었다고 물을 게 아니라, '공수처가 문제 있다'고 말하지 않는 사람을 넣은 것이 더 문제"라고 지적했다.
+        <br>
+        안철수 국민의당 대표의 신당과 관련해 당 내 이견이 있는 데 대해서는 "의원 103명이 있는데 이견이라고 표현하면 이상한 것"이라며 "다 다양한 의견이 있다"고 말했다.
+        <br>
+        주 원내대표는 앞서 원내대책회의에서 "추 장관이 왜 이럴까 생각해봤는데, 내 멋대로 싸워보자는 광인 전략을 구사하는 것으로 판단을 내렸다"며 "광인 전략은 다른 부처는 몰라도 법무장관이 광인전략 구사하는건 맞지 않다. 나라의 품격과 관계되는 일이기 때문에, 광인 전략은 안 썼으면 좋겠다"고 말했다.
+        <br>
+        앞서 추 장관이 윤석열 검찰총장의 특수활동비(특활비) 사용을 문제삼고 이에 반발한 야당 의원들이 법무부도 들여다보자고 주장하면서, 전날 여야 법사위원들이 법무부와 대검찰청의 특활비 사용 내용을 검증했지만 '맹탕 검증'으로 끝났다.
+        <br>
+        주 원내대표는 국정조사나 특위를 통해 정부의 특활비 전반을 점검할 필요가 있다고 주장하기도 했다. 그는 "법무부는 정보 수사와 이에 준하는 활동에 관해 예전에 출입국 관리본부, 외국인 정책본부 말고는 특활비를 쓸 수 없게 돼 있다"며 "추 장관은 자기 임기 중에는 쓴 게 없다고 하는데, 조국·박상기 전 장관 때 위법하게 쓴 게 있는지 밝혀야 한다"고 지적했다.
+        <br>
+    </p>
+
+    <!-- 
+        text-indent : 문단에서 들여쓰기 할때 사용한다.
+            Block: 첫번째줄의 문장이 지정한 만큼 들여쓰기 된다.
+            inline : 컨텐츠의 영역에 잔여공간이 없으므로 들여쓰기
+                되지 않는다. 이때는 부모엘리먼트에서 padding을 통해
+                밀어줘야한다.
+     -->
+    <h2>들여쓰기</h2>
+    <div style="border: 1px solid red; text-indent: 1em;">
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+    </div>
+    
+    <div style="border: 1px solid blue; padding-left: 0px;">
+        <span style="text-indent: 1em;">
+        인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+        인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+        인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+        </span>
+    </div>
+
+
+
+</body>
+</html>
